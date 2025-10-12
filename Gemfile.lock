@@ -1,12 +1,22 @@
 GEM
   remote: https://gem.coop/
   specs:
+    ast (2.4.3)
     base64 (0.3.0)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
+    json (2.15.1)
+    language_server-protocol (3.17.0.5)
+    lint_roller (1.1.0)
     logger (1.7.0)
     mustermann (3.0.4)
       ruby2_keywords (~> 0.0.1)
+    parallel (1.27.0)
+    parser (3.3.9.0)
+      ast (~> 2.4.1)
+      racc
+    prism (1.5.2)
+    racc (1.8.1)
     rack (3.2.3)
     rack-protection (4.2.0)
       base64 (>= 0.1.0)
@@ -15,12 +25,36 @@ GEM
     rack-session (2.1.1)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
+    rainbow (3.1.1)
     redis (5.0.6)
       redis-client (>= 0.9.0)
     redis-client (0.17.0)
       connection_pool
     redis-namespace (1.6.0)
       redis (>= 3.0.4)
+    regexp_parser (2.11.3)
+    rubocop (1.81.1)
+      json (~> 2.3)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.1.0)
+      parallel (~> 1.10)
+      parser (>= 3.3.0.2)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 2.9.3, < 3.0)
+      rubocop-ast (>= 1.47.1, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 4.0)
+    rubocop-ast (1.47.1)
+      parser (>= 3.3.7.2)
+      prism (~> 1.4)
+    rubocop-md (2.0.3)
+      lint_roller (~> 1.1)
+      rubocop (>= 1.72.1)
+    rubocop-performance (1.26.0)
+      lint_roller (~> 1.1)
+      rubocop (>= 1.75.0, < 2.0)
+      rubocop-ast (>= 1.44.0, < 2.0)
+    ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     sidekiq (7.1.3)
       concurrent-ruby (< 2)
@@ -35,12 +69,18 @@ GEM
       rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
     tilt (2.6.1)
+    unicode-display_width (3.2.0)
+      unicode-emoji (~> 4.1)
+    unicode-emoji (4.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   redis-namespace
+  rubocop
+  rubocop-md
+  rubocop-performance
   sidekiq
   sinatra (~> 4.2)
 
