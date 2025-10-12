@@ -9,4 +9,4 @@ ADD config.ru /sidekiq/
 
 EXPOSE 3030
 ENTRYPOINT []
-CMD rackup config.ru -o 0.0.0.0 -p 3030 -q
+CMD ["rackup", "config.ru", "-o", "0.0.0.0", "-p", "3030", "-q"]
